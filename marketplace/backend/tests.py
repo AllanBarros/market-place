@@ -3,7 +3,7 @@ from django.urls import reverse
 from .models import *
 from .views import *
 
-class GerenciarMoedasTestCase(APITestCase):
+class MarketPlaceTestCase(APITestCase):
     
     fixtures=['produtos_testes.json']
 

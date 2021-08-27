@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from backend.views import ProdutoView, CarrinhoView
+from backend.views import ProdutoView, CarrinhoView, FinalizarCarrinhoView
 
 urlpatterns = [
     path('buscar/', ProdutoView.as_view(), name="buscar"),
@@ -22,6 +22,6 @@ urlpatterns = [
     path('quantidade/', CarrinhoView.as_view(({'patch': 'partial_update'})), name="quantidade"),
     path('remover/', CarrinhoView.as_view({'delete':'destroy'}), name="remover"),
     path('exibir/', CarrinhoView.as_view({'get':'retrieve'}), name="exibir"),
-    # path('comprar/', CarrinhoView.as_view(), name="comprar"),
+    path('comprar/', FinalizarCarrinhoView.as_view(), name="comprar"),
 
 ]
